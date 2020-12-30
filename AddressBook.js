@@ -108,7 +108,7 @@ function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email
     let contact=new Contact(firstname,lastname,address,city,state,zip,phoneNumber,email);
     contacts.push(contact);
 }
-AddContacts('Rohit','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','rohit@gmail.com');
+AddContacts('RohitDas','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','rohit@gmail.com');
 AddContacts('Rohit','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','rohit@gmail.com');
 AddContacts('Raj','Sharma','Madhapur','Hyderabad','Telanagana','500801','9290815127','Raj@gmail.com');
 console.log(contacts.toString());
@@ -150,4 +150,18 @@ DeleteContact('Rohit');
 //UC6 count
 console.log("Counting number of persons in addressbook");
 let count = contacts.reduce(((count) => { count += 1; return count; }), 0);
-console.log("Count number of contacts is: " + count);
+console.log("Count number of contacts is: " + count)
+
+//uc8
+function SearchCityOrState(cityOrState){
+    if(contacts.filter((p=>p.city==cityOrState)||(p=>p.state==cityOrState))){
+        console.log(contacts.toString());
+    }
+}
+
+//searching with city
+console.log("searching with city");
+SearchCityOrState('Hyderabad');
+//searching with state
+console.log("searching with state");
+SearchCityOrState('Andhrapradesh'); 
