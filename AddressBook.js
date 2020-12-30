@@ -100,11 +100,17 @@ class Contact{
 console.log("UC3 AddContacts");
 let contacts=new Array();
 function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email){
+   //UC7_DuplicateData
+   if(contacts.some(s=>s.firstname==firstname)){
+    console.log("Contact aready exists");
+    return;
+}
     let contact=new Contact(firstname,lastname,address,city,state,zip,phoneNumber,email);
     contacts.push(contact);
 }
-AddContacts('Rohit','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','sravni@gmail.com');
-AddContacts('Raj','Sharma','Madhapur','Hyderabad','Telanagana','500801','9290815127','Rupika@gmail.com');
+AddContacts('Rohit','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','rohit@gmail.com');
+AddContacts('Rohit','Bhat','Gandhichowk','Bantumilli','Andhrapradesh','521324','8712443377','rohit@gmail.com');
+AddContacts('Raj','Sharma','Madhapur','Hyderabad','Telanagana','500801','9290815127','Raj@gmail.com');
 console.log(contacts.toString());
 
 //Uc4 edit conatct
