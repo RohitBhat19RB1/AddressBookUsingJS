@@ -117,14 +117,26 @@ function GetConatctIndex(firstname){
     return -1;
 }
 
-let contactindex=GetConatctIndex('Sravani');
+let contactindex=GetConatctIndex('Raj');
 if(contactindex!=-1){
     console.log("contacts before updation");
     console.log(contacts.toString());
-    contacts[contactindex].firstname='Rupika';
+    contacts[contactindex].firstname='Raju';
     contacts[contactindex].city='Hyderabad';
     console.log("contacts after updation");
     console.log(contacts.toString());
 }else{
     console.log("conatct not found");
-}  
+} 
+
+//UC5 deleteContact
+function DeleteContact(firstname){
+    for(let i=0;i<contacts.length;i++){
+        if(contacts[i].firstname==firstname){
+            contacts.pop(i);
+            console.log(contacts.toString());
+        }
+    }
+}
+console.log("delete contact");
+DeleteContact('Rohit');
